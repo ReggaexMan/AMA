@@ -1,0 +1,41 @@
+.question-tag {
+  background-color: var(--primary);
+  color: var(--color-primary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-semi-bold);
+  border-radius: var(--border-radius);
+  padding: 5px 10px;
+}
+
+.delete-tag {
+  background-color: var(--delete);
+  color: var(--color-primary);
+  font-size: var(--font-size-small);
+  /* font-weight: var(--font-weight-semi-bold); */
+  border-radius: var(--border-radius);
+  /* border: none; */
+  padding: 5px 10px;
+  margin: 10px;
+}
+
+.edit-tag {
+  background-color: var(--accent);
+  color: var(--color-primary);
+  font-size: var(--font-size-small);
+  /* font-weight: var(--font-weight-semi-bold); */
+  border-radius: var(--border-radius);
+  /* border: none; */
+  padding: 5px 10px;
+  margin: 10px;
+}
+
+small {
+  opacity: 0.7;
+}
+
+.edit-form {
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}

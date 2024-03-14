@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  {% apply inline_css(source('@email_css/email.css')) %}
+
+  <h1>Message de Contact</h1>
+  <p>Vous avez reçu un nouveau message de contact :</p>
+  <p><strong>Nom :</strong> {{ name }}</p>
+  <p><strong>Email :</strong> {{ senderEmail }}</p>
+  <p><strong>Sujet :</strong> {{ subject }}</p>
+  <p><strong>Message :</strong> {{ message }}</p>
+
+  {% endapply %}
+
+</body>
+</html>

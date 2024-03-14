@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion des Questions{% endblock %}
+
+{% block body %}
+<div class="admin-questions">
+    <h1>Gestion des Questions</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Titre</th>
+                <th>Auteur</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for question in questions %}
+                <tr>
+                    <td>{{ question.id }}</td>
+                    <td>{{ question.title }}</td>
+                    <td>{{ question.author.fullname }}</td>
+                    <td>
+                        <form method="post" action="{{ path('admin_question_delete', {'id': question.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette question ?');">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ question.id) }}">
+                            <button type="submit" class="btn">Supprimer</button>
+                        </form>                    
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

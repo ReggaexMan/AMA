@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace Admin{% endblock %}
+
+{% block styleSheets %}
+    {{ parent() }}
+    <!-- Ajoute ici tes styles spécifiques à l'admin si nécessaire -->
+{% endblock %}
+
+{% block body %}
+<div class="admin-dashboard">
+    <h1>Bienvenue dans ton Espace Admin, ô {{ app.user.fullname }} !</h1>
+
+    <!-- Section Gestion des Utilisateurs -->
+    <div class="admin-section">
+        <h2>Gestion des Utilisateurs</h2>
+        <a href="{{ path('admin_users') }}">Voir les Utilisateurs</a>
+    </div>
+
+    <!-- Section Gestion des Questions -->
+    <div class="admin-section">
+        <h2>Gestion des Questions</h2>
+        <a href="{{ path('admin_questions') }}">Voir les Questions</a>
+    </div>
+
+    <!-- Section Gestion des Réponses -->
+    <div class="admin-section">
+        <h2>Gestion des Réponses</h2>
+        <a href="{{ path('admin_comments') }}">Voir les Réponses</a>
+    </div>
+</div>
+{% endblock %}

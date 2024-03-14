@@ -1,0 +1,43 @@
+<header class="d-flex flex-row-nowrap justify-content-center p-20">
+  <div class="content flex-fill d-flex flex-row-nowrap align-items-center justify-content-between ">
+  <a class="header-logo ml-50" href="{{ path('home') }}">
+    <img src="{{ asset('images/AMA_light.png')}}">
+  </a>
+  <div class="header-search p-10 flex-fill">
+    <i class="fa-solid fa-search"></i>
+    <input type="text">
+  </div>
+  <i class="mobile fa-solid fa-search"></i>
+
+    {# Boutons qui apparaîtront seulement sur mobile #}
+    <div class="mobile-buttons">
+      <a href="{{ path('question_form') }}" class="mobile btn btn-primary">?</a>
+      <a href="{{ path('home') }}" class="mobile btn btn-primary"><i class="fa-solid fa-house mr-5"></i></a>
+      
+      {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('app_admin') }}" class="mobile btn btn-primary">A</a>
+      {% endif %}
+    </div>
+    
+
+  {%- if is_granted('ROLE_USER') -%}
+      <div class="d-flex flow-row-nowrap justify-content-center">
+      <a href="{{ path('current_user') }}">
+        <img src="{{ app.user.picture }}" class="avatar avatar-lg mr-20">
+      </a>
+    {% if is_granted('ROLE_ADMIN') %}
+      <small class="d-flex flex-column justify-content-center mr-50">
+      <a href="{{ path('app_admin') }}" class="admin btn btn-primary">ADMIN</a>
+  </small>
+  
+      {% endif %}
+    
+    </div>
+  {% else %}
+    <div>
+      <a href="{{ path('signup') }}" class="btn btn-primary mr-5">Inscription</a>
+      <a href="{{ path('login') }}" class="btn btn-primary-stroke mr-30">Connexion</a>
+    </div>
+  {%- endif -%}
+  </div>
+</header>

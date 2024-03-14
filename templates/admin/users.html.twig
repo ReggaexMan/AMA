@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion des Utilisateurs{% endblock %}
+
+{% block body %}
+<div class="admin-users">
+    <h1>Gestion des Utilisateurs</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.fullname }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+                <form method="post" action="{{ path('admin_toggle_user', {'id': user.id}) }}">
+                    <input type="hidden" name="_token" value="{{ csrf_token('toggle_user' ~ user.id) }}">
+                    <button type="submit" class="btn">
+                        {% if user.isActive %}
+                            Désactiver
+                        {% else %}
+                            Réactiver
+                        {% endif %}
+                    </button>
+                </form>
+            </td>
+        </tr>
+    {% endfor %}    
+            {% for message in app.flashes('success') %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+{% endfor %}
+{% for message in app.flashes('error') %}
+    <div class="alert alert-danger">
+        {{ message }}
+    </div>
+{% endfor %}
+
+        </tbody>
+    </table>
+</div>
+{% endblock %}
