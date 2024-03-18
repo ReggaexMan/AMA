@@ -7,11 +7,12 @@
         "php": ">=8.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "ext-intl" : "*",
+        "ext-intl": "*",
         "doctrine/doctrine-bundle": "^2.11",
         "doctrine/doctrine-migrations-bundle": "^3.3",
         "doctrine/orm": "^2.17",
         "knplabs/knp-time-bundle": "^2.2",
+        "symfony/apache-pack": "^1.0",
         "symfony/asset": "7.0.*",
         "symfony/console": "7.0.*",
         "symfony/dotenv": "7.0.*",
@@ -20,6 +21,7 @@
         "symfony/framework-bundle": "7.0.*",
         "symfony/mailer": "7.0.*",
         "symfony/messenger": "7.0.*",
+        "symfony/monolog-bundle": "^3.10",
         "symfony/rate-limiter": "7.0.*",
         "symfony/runtime": "7.0.*",
         "symfony/security-bundle": "7.0.*",
@@ -29,8 +31,7 @@
         "symfony/yaml": "7.0.*",
         "twig/cssinliner-extra": "^3.8",
         "twig/extra-bundle": "^2.12|^3.0",
-        "twig/twig": "^3.8",
-        "symfony/monolog-bundle": "^3.10"
+        "twig/twig": "^3.8"
     },
     "config": {
         "allow-plugins": {
